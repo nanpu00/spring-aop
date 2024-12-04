@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -11,6 +12,7 @@ import java.util.Arrays;
 @Slf4j
 @Aspect
 @Component
+@Order(2)
 public class LogAspect {
     // 前置通知
     @Before("execution( public int com.nanpu.springaop.CalculatorImpl.*(..) )")
